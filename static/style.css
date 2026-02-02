@@ -1,0 +1,355 @@
+body {
+  background: radial-gradient(circle, #0f2027, #000);
+  font-family: Poppins, sans-serif;
+  color: white;
+}
+
+.card {
+  width: 60%;
+  margin: 5% auto;
+  padding: 30px;
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 30px cyan;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+button {
+  padding: 12px 20px;
+  background: cyan;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+select {
+  padding: 12px;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+}
+
+.progress {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress-bar {
+  height: 25px;
+  background: linear-gradient(90deg, red, yellow, lime);
+  text-align: center;
+  font-weight: bold;
+  transition: width 1s ease;
+}
+/* =========================
+   ATS PROGRESS BAR
+========================= */
+
+.progress-container {
+    margin: 20px 0 30px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 26px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.7);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: width 1.5s ease-in-out, background 0.5s;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.progress-bar span {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* COLORS */
+.progress-low {
+    background: linear-gradient(90deg, #ff4b4b, #ff0000);
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+}
+
+.progress-mid {
+    background: linear-gradient(90deg, #f7b733, #fc4a1a);
+    box-shadow: 0 0 12px rgba(255, 165, 0, 0.6);
+}
+
+.progress-high {
+    background: linear-gradient(90deg, #00c853, #00e676);
+    box-shadow: 0 0 12px rgba(0, 255, 120, 0.6);
+}
+/* =========================
+   ATS RESULT UI
+========================= */
+
+.ats-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.progress {
+    background: #222;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    height: 26px;
+    background: linear-gradient(90deg, #00f5ff, #00ffa6);
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    line-height: 26px;
+    transition: width 1s ease-in-out;
+}
+
+.section-title {
+    margin: 25px 0 10px;
+    font-size: 20px;
+}
+
+.section-title.success {
+    color: #00ffa6;
+}
+
+.section-title.danger {
+    color: #ff6b6b;
+}
+
+/* GRID */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+/* SKILL CARD */
+.skill-card {
+    background: #111;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* MATCHED */
+.skill-card.matched {
+    border: 1px solid #00ffa6;
+    color: #00ffa6;
+}
+
+.skill-card.matched:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 166, 0.6);
+}
+
+/* MISSING */
+.skill-card.missing {
+    border: 1px solid #ff6b6b;
+    color: #ffb3b3;
+}
+
+.skill-card.missing:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+}
+
+/* YOUTUBE LINK */
+.skill-card a {
+    display: block;
+    margin-top: 8px;
+    color: #00f5ff;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.skill-card a:hover {
+    text-decoration: underline;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid #00f5ff;
+    color: #00f5ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #00f5ff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+}
+/* =========================
+   LEARNING RESOURCES
+========================= */
+
+.section-title.info {
+    color: #6ab7ff;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.learning-card {
+    background: linear-gradient(145deg, #0f1115, #141821);
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid #2a2f3a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-6px);
+    border-color: #6ab7ff;
+    box-shadow: 0 0 22px rgba(106, 183, 255, 0.45);
+}
+
+.learning-skill {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e8f1ff;
+    margin-bottom: 6px;
+}
+
+.learning-desc {
+    font-size: 14px;
+    color: #b6c2d9;
+    margin-bottom: 14px;
+}
+
+.learn-btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6ab7ff, #00f5ff);
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learn-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 245, 255, 0.6);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #151515;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+}
+
+h1, h2, h3 {
+    color: #00ffff;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+button {
+    background: linear-gradient(90deg, #00ffff, #00ff88);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.progress {
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 20px;
+    background: linear-gradient(90deg, #00ffff, #00ff88);
+}
+.info-section {
+  margin: 30px 0;
+}
+
+.info-box {
+  background: #111;
+  border-left: 4px solid #00e5ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.bullet-list {
+  margin-left: 20px;
+}
+
+.bullet-list li {
+  margin: 6px 0;
+  color: #ddd;
+}
+
+.info-section a {
+  color: #00e5ff;
+  text-decoration: none;
+}
+
+.info-section a:hover {
+  text-decoration: underline;
+}

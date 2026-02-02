@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="container">
+
+    <!-- ================= CONTACT INFO ================= -->
+    <div class="info-section">
+        <h3 class="section-title">📇 Contact</h3>
+
+        <div class="info-box">
+            <p><strong>Email:</strong> {{ data.contact_info.email or "Not found" }}</p>
+            <p><strong>Phone:</strong> {{ data.contact_info.phone or "Not found" }}</p>
+
+            {% if data.contact_info.linkedin %}
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="{{ data.contact_info.linkedin }}" target="_blank">
+                        {{ data.contact_info.linkedin }}
+                    </a>
+                </p>
+            {% else %}
+                <p><strong>LinkedIn:</strong> Not found</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ================= CURRENT SKILLS ================= -->
+    <div class="info-section">
+        <h3 class="section-title">🛠 Skills</h3>
+
+        {% if data.skills %}
+            <ul class="bullet-list">
+                {% for skill in data.skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty-text">No skills detected</p>
+        {% endif %}
+    </div>
+
+    <!-- ================= EDUCATION ================= -->
+    <div class="info-section">
+        <h3 class="section-title">🎓 Education</h3>
+
+        {% if data.education %}
+            <ul class="bullet-list">
+                {% for edu in data.education %}
+                    <li>{{ edu }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty-text">No education data found</p>
+        {% endif %}
+    </div>
+
+    <!-- ================= ATS SCORE ================= -->
+    <h2 class="ats-title">{{ role }} ATS Match</h2>
+
+    <div class="progress">
+        <div class="progress-bar" style="width: {{ score }}%;">
+            {{ score }}%
+        </div>
+    </div>
+
+    <!-- ================= MATCHED SKILLS ================= -->
+    <h3 class="section-title success">✅ Matched Skills</h3>
+
+    {% if matched %}
+        <div class="skills-grid">
+            {% for s in matched %}
+                <div class="skill-card matched">
+                    ✔ {{ s }}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-text">No matched skills found.</p>
+    {% endif %}
+
+    <!-- ================= MISSING SKILLS ================= -->
+    <h3 class="section-title danger">❌ Missing Skills (Learn These)</h3>
+
+    {% if youtube_links %}
+        <div class="skills-grid">
+            {% for skill, link in youtube_links.items() %}
+                <div class="skill-card missing">
+                    ⚠ {{ skill }}
+                    <a href="{{ link }}" target="_blank">Watch ▶</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-text">No missing skills 🎉</p>
+    {% endif %}
+
+    <!-- ================= LEARNING RESOURCES ================= -->
+    {% if youtube_links and youtube_links|length > 0 %}
+        <h3 class="section-title info">📚 Learning Resources</h3>
+
+        <div class="learning-grid">
+            {% for skill, link in youtube_links.items() %}
+                <div class="learning-card">
+                    <div class="learning-skill">{{ skill }}</div>
+                    <p class="learning-desc">
+                        Learn {{ skill }} with beginner-to-advanced tutorials curated on YouTube.
+                    </p>
+                    <a href="{{ link }}" target="_blank" class="learn-btn">
+                        Learn on YouTube ▶
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- ================= RESUME TIPS ================= -->
+    {% if tips %}
+        <h3 class="section-title advice">🧠 Resume Improvement Tips</h3>
+
+        <div class="tips-box">
+            <ul>
+                {% for tip in tips %}
+                    <li>💡 {{ tip }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- ================= ACTION ================= -->
+    <a href="/" class="back-btn">Analyze Another Resume</a>
+
+</div>
+</body>
+</html>
+
+
+
