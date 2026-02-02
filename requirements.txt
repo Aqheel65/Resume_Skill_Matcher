@@ -1,0 +1,6 @@
+flask
+pdfminer.six
+python-docx
+pytesseract
+pillow
+spacy
